@@ -1,0 +1,50 @@
+// Імпортуємо лише потрібні частини Bootstrap
+$primary: #3aa8d8;
+$body-bg: #f4f4f4;
+$font-size-base: 0.875rem;
+$input-bg: #f8f8f8;
+$input-placeholder-color: #aaa;
+$enable-shadows: false;
+
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/card';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/close';
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/modal';
+@import 'bootstrap/scss/transitions';
+@import 'bootstrap/scss/utilities/api';
+
+.app { max-width: 720px; margin: 0 auto; padding: 4rem 1rem; }
+.btn-primary { color: #fff; &:hover, &:disabled { color: #fff; } }
+.winner-tag {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  background: $primary; color: #fff; font-size: 0.7rem; font-weight: 600;
+  padding: 0.15rem 0.4rem; border-radius: 0.2rem;
+  button { all: unset; cursor: pointer; font-weight: 700; }
+}
+.winners-field {
+  flex: 1; min-height: 2.4rem; display: flex; flex-wrap: wrap; gap: 0.4rem;
+  align-items: center; padding: 0.3rem 0.6rem; background: #fff;
+  border: 1px solid #dfe3e6; border-radius: 0.25rem; color: #aaa;
+}
+.error-text { color: #dc3545; font-size: 0.7rem; margin-top: 0.15rem; }
+.sort-btn { all: unset; cursor: pointer; margin-left: 0.25rem; opacity: 0.6; &.active { opacity: 1; color: $primary; } }
+// Модальне вікно + анімація
+.modal-backdrop-custom {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); z-index: 1050;
+  display: flex; align-items: flex-start; justify-content: center; padding-top: 4rem; overflow-y: auto;
+  .modal-content { width: 100%; max-width: 500px; margin: 0 1rem; }
+}
+.modal-fade-enter-active, .modal-fade-leave-active { transition: opacity 0.25s ease;
+  .modal-content { transition: transform 0.25s ease; } }
+.modal-fade-enter-from, .modal-fade-leave-to { opacity: 0; .modal-content { transform: translateY(-30px); } }
